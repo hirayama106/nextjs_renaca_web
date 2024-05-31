@@ -1,113 +1,141 @@
-import Image from "next/image";
+import type { Metadata } from 'next';
+import Image from 'next/image';
+import { cn } from '@/lib/utils';
+import { Button } from '@/components/ui/button';
+import Link from 'next/link';
+import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from '@/components/ui/table';
+import { Heading, HeadingAlphabet, HeadingText } from '@/components/typography/heading';
+import { WorksListContainer, WorksListItem } from '@/components/works/list-item';
+import { getWorksList } from '@/lib/microcms';
 
-export default function Home() {
-  return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <div className="z-10 w-full max-w-5xl items-center justify-between font-mono text-sm lg:flex">
-        <p className="fixed left-0 top-0 flex w-full justify-center border-b border-gray-300 bg-gradient-to-b from-zinc-200 pb-6 pt-8 backdrop-blur-2xl dark:border-neutral-800 dark:bg-zinc-800/30 dark:from-inherit lg:static lg:w-auto  lg:rounded-xl lg:border lg:bg-gray-200 lg:p-4 lg:dark:bg-zinc-800/30">
-          Get started by editing&nbsp;
-          <code className="font-mono font-bold">src/app/page.tsx</code>
-        </p>
-        <div className="fixed bottom-0 left-0 flex h-48 w-full items-end justify-center bg-gradient-to-t from-white via-white dark:from-black dark:via-black lg:static lg:size-auto lg:bg-none">
-          <a
-            className="pointer-events-none flex place-items-center gap-2 p-8 lg:pointer-events-auto lg:p-0"
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{" "}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className="dark:invert"
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
-        </div>
-      </div>
+export const metadata: Metadata = {
+	title: 'Renaca（リナカ）',
+	description:
+		'Web制作・フロントエンド開発を得意としている山梨県在住のフリーランスWebエンジニアです。お仕事のご依頼などお気軽にお問い合わせください。',
+};
 
-      <div className="relative z-[-1] flex place-items-center before:absolute before:h-[300px] before:w-full before:-translate-x-1/2 before:rounded-full before:bg-gradient-radial before:from-white before:to-transparent before:blur-2xl before:content-[''] after:absolute after:-z-20 after:h-[180px] after:w-full after:translate-x-1/3 after:bg-gradient-conic after:from-sky-200 after:via-blue-200 after:blur-2xl after:content-[''] before:dark:bg-gradient-to-br before:dark:from-transparent before:dark:to-blue-700 before:dark:opacity-10 after:dark:from-sky-900 after:dark:via-[#0141ff] after:dark:opacity-40 sm:before:w-[480px] sm:after:w-[240px] before:lg:h-[360px]">
-        <Image
-          className="relative dark:drop-shadow-[0_0_0.3rem_#ffffff70] dark:invert"
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
-      </div>
+export default async function Home() {
+	const { contents } = await getWorksList({ limit: 2 });
 
-      <div className="mb-32 grid text-center lg:mb-0 lg:w-full lg:max-w-5xl lg:grid-cols-4 lg:text-left">
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className="mb-3 text-2xl font-semibold">
-            Docs{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className="m-0 max-w-[30ch] text-sm opacity-50">
-            Find in-depth information about Next.js features and API.
-          </p>
-        </a>
-
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className="mb-3 text-2xl font-semibold">
-            Learn{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className="m-0 max-w-[30ch] text-sm opacity-50">
-            Learn about Next.js in an interactive course with&nbsp;quizzes!
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className="mb-3 text-2xl font-semibold">
-            Templates{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className="m-0 max-w-[30ch] text-sm opacity-50">
-            Explore starter templates for Next.js.
-          </p>
-        </a>
-
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className="mb-3 text-2xl font-semibold">
-            Deploy{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className="m-0 max-w-[30ch] text-balance text-sm opacity-50">
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
-      </div>
-    </main>
-  );
+	return (
+		<>
+			<section className={cn('bg-secondary pt-32 pb-24 sm:pt-40 sm:pb-32')}>
+				<div className='container'>
+					<div className={cn('flex flex-col md:flex-row items-center justify-center')}>
+						<div>
+							<Image src='/images/img_kv.png' width={480} height={480} alt='' />
+						</div>
+						<div className={cn('grid md:pl-10')}>
+							<h1 className={cn('text-5xl lg:text-6xl font-alphabet font-bold tracking-wide flex flex-col gap-2 mb-4')}>
+								<span>Good Quality</span>
+								<span>Front-End</span>
+								<span>Development</span>
+							</h1>
+							<p className={cn('text-base leading-8 mb-8')}>
+								山梨県在住のフリーランスのフロントエンドエンジニアです。
+								<br />
+								お仕事のご依頼などお気軽にご相談ください。
+							</p>
+							<Button size='lg' className={cn('shadow')} asChild>
+								<Link href='/contact/'>お問い合わせはこちら</Link>
+							</Button>
+						</div>
+					</div>
+				</div>
+			</section>
+			<section className={cn('py-24 sm:py-32')}>
+				<div className='container'>
+					<Heading className={cn('mb-10')}>
+						<HeadingAlphabet>Works</HeadingAlphabet>
+						<HeadingText>制作実績</HeadingText>
+					</Heading>
+					{!contents || contents.length === 0 ? (
+						<p className={cn('text-sm text-center')}>実績がまだありません</p>
+					) : (
+						<WorksListContainer>
+							{contents.map((item) => {
+								return <WorksListItem key={item.id} id={item.id} image={`${item.image.url}?w=1000`} title={item.title} />;
+							})}
+						</WorksListContainer>
+					)}
+					<div className={cn('max-w-[420px] pt-8 mx-auto')}>
+						<Button size='lg' className={cn('shadow w-full')} asChild>
+							<Link href='/works/'>制作実績一覧はこちら</Link>
+						</Button>
+					</div>
+				</div>
+			</section>
+			<section className={cn('bg-secondary py-24 sm:py-32')}>
+				<div className='container'>
+					<Heading className={cn('mb-10')}>
+						<HeadingAlphabet>Profile</HeadingAlphabet>
+						<HeadingText>プロフィール</HeadingText>
+					</Heading>
+					<div className={cn('flex items-center flex-col sm:flex-row-reverse justify-center gap-6')}>
+						<div className={cn('w-[10rem] sm:w-auto bg-background border rounded-full overflow-hidden')}>
+							<Image src='/images/icon_hirayama.png' width={250} height={250} alt='' />
+						</div>
+						<div className={cn('w-full sm:max-w-[420px]')}>
+							<div className={cn('mb-6')}>
+								<p className={cn('text-sm sm:text-base font-bold mb-2')}>フロントエンドエンジニア</p>
+								<p className={cn('text-2xl sm:text-3xl font-bold')}>平山 友之</p>
+							</div>
+							<dl className={cn('grid gap-4')}>
+								<div>
+									<dt className={cn('text-sm font-bold mb-1')}>スキル</dt>
+									<dd className={cn('text-base')}>HTML / CSS / JavaScript / TypeScript / React / Next.js / WordPress / etc...</dd>
+								</div>
+								<div>
+									<dt className={cn('text-sm font-bold mb-1')}>略歴</dt>
+									<dd className={cn('text-base leading-7')}>
+										1989年生まれ、山梨県在住。
+										<br />
+										2014年よりWeb制作会社にエンジニアとして勤務。
+										<br />
+										2019年1月にフリーランスとして開業。
+									</dd>
+								</div>
+							</dl>
+						</div>
+					</div>
+				</div>
+			</section>
+			<section className={cn('py-24 sm:py-32')}>
+				<div className='container'>
+					<Heading className={cn('mb-10')}>
+						<HeadingAlphabet>Business</HeadingAlphabet>
+						<HeadingText>事業概要</HeadingText>
+					</Heading>
+					<div className={cn('max-w-screen-md mx-auto border p-6 sm:p-10')}>
+						<Table>
+							<TableBody>
+								<TableRow>
+									<TableHead className={cn('w-[7em] sm:w-[10em]')}>屋号</TableHead>
+									<TableCell>Renaca（リナカ）</TableCell>
+								</TableRow>
+								<TableRow>
+									<TableHead>事業主</TableHead>
+									<TableCell>平山 友之</TableCell>
+								</TableRow>
+								<TableRow>
+									<TableHead>所在地</TableHead>
+									<TableCell>山梨県中巨摩郡昭和町</TableCell>
+								</TableRow>
+								<TableRow>
+									<TableHead>創業</TableHead>
+									<TableCell>2019年1月</TableCell>
+								</TableRow>
+								<TableRow>
+									<TableHead>事業内容</TableHead>
+									<TableCell>
+										Webサイト制作・コーディング受託 / Webフロントエンド開発 / Webメディア寄稿・監修 / 講師業 / etc...
+									</TableCell>
+								</TableRow>
+							</TableBody>
+						</Table>
+					</div>
+				</div>
+			</section>
+		</>
+	);
 }
