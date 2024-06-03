@@ -38,10 +38,14 @@ export const getWorksList = async (queries?: MicroCMSQueries) => {
 };
 
 export const getWorksDetail = async (contentId: string, queries?: MicroCMSQueries) => {
-	const data = await client.getListDetail<Works>({
-		endpoint: 'works',
-		contentId,
-		queries,
-	});
-	return data;
+	try {
+		const data = await client.getListDetail<Works>({
+			endpoint: 'works',
+			contentId,
+			queries,
+		});
+		return data;
+	} catch {
+		return null;
+	}
 };
