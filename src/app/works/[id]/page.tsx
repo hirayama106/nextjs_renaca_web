@@ -11,9 +11,10 @@ import parse from 'html-react-parser';
 
 export async function generateMetadata({ params: { id } }: { params: { id: string } }) {
 	const data = await getWorksDetail(id);
-	return {
-		title: `${data.title} | 制作実績 | Renaca（リナカ）`,
-	};
+	if (data)
+		return {
+			title: `${data.title} | 制作実績 | Renaca（リナカ）`,
+		};
 }
 
 export default async function WorkDetail({ params: { id } }: { params: { id: string } }) {
