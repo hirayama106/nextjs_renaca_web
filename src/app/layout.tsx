@@ -5,6 +5,7 @@ import { ThemeProvider } from '@/components/theme-provider';
 import { Header } from '@/components/layout/header';
 import { Footer } from '@/components/layout/footer';
 import { Toaster } from '@/components/ui/sonner';
+import { GoogleAnalytics } from '@next/third-parties/google';
 
 const rubik = Rubik({
 	subsets: ['latin'],
@@ -31,6 +32,7 @@ export default function RootLayout({
 					</div>
 					<Toaster richColors />
 				</ThemeProvider>
+				{!!process.env.GOOGLE_ANALYTICS_ID && <GoogleAnalytics gaId={process.env.GOOGLE_ANALYTICS_ID} />}
 			</body>
 		</html>
 	);
