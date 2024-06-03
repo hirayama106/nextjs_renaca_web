@@ -20,7 +20,7 @@ export function WorksListItem({ id, image, title }: WorksListItemType) {
 		<div className='space-y-3'>
 			<Button asChild={true} className={cn('bg-secondary hover:bg-primary p-2 sm:p-3 md:p-6 h-auto border')}>
 				<Link href={`/works/${id}/`}>
-					<Image src={image} width={1000} height={700} alt='' />
+					<Image src={image} width={1000} height={583} alt='' />
 				</Link>
 			</Button>
 			<h3 className={cn('text-sm sm:text-base md:text-lg font-bold')}>{title}</h3>
