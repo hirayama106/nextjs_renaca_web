@@ -3,13 +3,13 @@ import Image from 'next/image';
 import { cn } from '@/lib/utils';
 import { Button } from '@/components/ui/button';
 import Link from 'next/link';
-import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from '@/components/ui/table';
+import { Table, TableBody, TableCell, TableHead, TableRow } from '@/components/ui/table';
 import { Heading, HeadingAlphabet, HeadingText } from '@/components/typography/heading';
 import { WorksListContainer, WorksListItem } from '@/components/works/list-item';
 import { getWorksList } from '@/lib/microcms';
 
 export const metadata: Metadata = {
-	title: 'Renaca（リナカ）',
+	title: 'Renaca（リナカ） - 山梨のWeb制作・フロントエンド開発',
 	description:
 		'Web制作・フロントエンド開発を得意としている山梨県在住のフリーランスWebエンジニアです。お仕事のご依頼などお気軽にお問い合わせください。',
 };
@@ -36,7 +36,7 @@ export default async function Home() {
 								<br />
 								お仕事のご依頼などお気軽にご相談ください。
 							</p>
-							<Button size='lg' className={cn('shadow')} asChild>
+							<Button size='lg' asChild>
 								<Link href='/contact/'>お問い合わせはこちら</Link>
 							</Button>
 						</div>
@@ -58,8 +58,8 @@ export default async function Home() {
 							})}
 						</WorksListContainer>
 					)}
-					<div className={cn('max-w-[420px] pt-8 mx-auto')}>
-						<Button size='lg' className={cn('shadow w-full')} asChild>
+					<div className={cn('max-w-[440px] pt-12 mx-auto')}>
+						<Button size='lg' className={cn('w-full')} asChild>
 							<Link href='/works/'>制作実績一覧はこちら</Link>
 						</Button>
 					</div>
