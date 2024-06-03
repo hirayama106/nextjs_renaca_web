@@ -125,7 +125,7 @@ export function ContactForm() {
 							<span>コーディング業務のご相談</span>
 						</dt>
 						<dd className={cn('text-sm')}>
-							制作会社様やフリーランスのWebデザイナー様からのコーディング業務のご依頼も承っております。静的サイトはもちろん、WordPressを用いたサイト、Next.jsなどのフレームワークを用いたJAMStackサイトの実装にも対応可能です。
+							制作会社様やフリーランスのWebデザイナー様からのコーディング業務のご依頼も承っております。静的サイトはもちろん、WordPressを用いたサイト、Next.jsなどのフレームワークを用いたJAMstackサイトの実装にも対応可能です。
 						</dd>
 					</div>
 				</dl>
