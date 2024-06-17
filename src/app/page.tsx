@@ -32,7 +32,7 @@ export default async function Home() {
 								<span>Development</span>
 							</h1>
 							<p className={cn('text-base leading-8 mb-8')}>
-								山梨県在住のフリーランスのフロントエンドエンジニアです。
+								フリーランスで活動しているフロントエンドエンジニアです。
 								<br />
 								お仕事のご依頼などお気軽にご相談ください。
 							</p>
@@ -133,6 +133,11 @@ export default async function Home() {
 								</TableRow>
 							</TableBody>
 						</Table>
+					</div>
+					<div className={cn('max-w-[440px] pt-12 mx-auto')}>
+						<Button size='lg' className={cn('w-full')} asChild>
+							<Link href='/contact/'>お問い合わせはこちら</Link>
+						</Button>
 					</div>
 				</div>
 			</section>
