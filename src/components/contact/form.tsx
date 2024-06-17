@@ -122,10 +122,10 @@ export function ContactForm() {
 					<div>
 						<dt className={cn('flex items-center gap-2 text-base font-bold mb-1')}>
 							<SquareCheckBig className='h-[1.5rem] w-[1.5rem] stroke-primary' />
-							<span>コーディング業務のご相談</span>
+							<span>コーディングのご依頼</span>
 						</dt>
 						<dd className={cn('text-sm')}>
-							制作会社様やフリーランスのWebデザイナー様からのコーディング業務のご依頼も承っております。静的サイトはもちろん、WordPressを用いたサイト、Next.jsなどのフレームワークを用いたJAMstackサイトの実装にも対応可能です。
+							制作会社様やフリーランスのWebデザイナー様からのコーディングのご依頼も承っております。静的サイトはもちろん、WordPressを用いたサイト、Next.jsなどのフレームワークを用いたJAMstackサイトの実装にも対応可能です。
 						</dd>
 					</div>
 				</dl>
@@ -149,7 +149,7 @@ export function ContactForm() {
 									</FormControl>
 									<SelectContent>
 										<SelectItem value='Webサイト制作のご相談'>Webサイト制作のご相談</SelectItem>
-										<SelectItem value='コーディング業務のご相談'>コーディング業務のご相談</SelectItem>
+										<SelectItem value='コーディングのご依頼'>コーディングのご依頼</SelectItem>
 										<SelectItem value='その他のご相談'>その他のご相談</SelectItem>
 									</SelectContent>
 								</Select>
