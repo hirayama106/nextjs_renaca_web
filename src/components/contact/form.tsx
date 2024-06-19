@@ -26,7 +26,6 @@ import { sendContactForm } from '@/actions/send-contact-form';
 import { toast } from 'sonner';
 import Link from 'next/link';
 import { startProgress, stopProgress } from 'next-nprogress-bar';
-import { nl2br } from '@/utils/nl2br';
 
 const requiredText = z.string().min(1, {
 	message: '必須項目です',
@@ -261,7 +260,6 @@ export function ContactForm() {
 									入力内容にお間違いがないかご確認の上、問題がなければ「送信する」ボタンを押してください。
 								</AlertDialogDescription>
 							</AlertDialogHeader>
-							{nl2br(form.getValues('message'))}
 							<AlertDialogFooter>
 								<AlertDialogCancel>キャンセル</AlertDialogCancel>
 								{isSending ? (
