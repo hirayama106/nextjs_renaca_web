@@ -27,7 +27,7 @@ export default function RootLayout({
 				<ThemeProvider attribute='class' defaultTheme='system' enableSystem disableTransitionOnChange>
 					<div className='min-h-screen flex flex-col'>
 						<Header />
-						<main className='grid flex-grow'>{children}</main>
+						<main className='flex-grow'>{children}</main>
 						<Footer />
 					</div>
 					<Toaster richColors />

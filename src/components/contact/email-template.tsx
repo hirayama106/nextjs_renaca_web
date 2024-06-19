@@ -1,6 +1,7 @@
 import * as React from 'react';
 import { z } from 'zod';
 import { formSchema } from '@/components/contact/form';
+import { nl2br } from '@/utils/nl2br';
 
 export function EmailTemplate({ title, name, company, email, tel, url, budget, message }: z.infer<typeof formSchema>) {
 	return (
@@ -38,7 +39,7 @@ export function EmailTemplate({ title, name, company, email, tel, url, budget, m
 					</tr>
 					<tr>
 						<th>詳しいご相談内容</th>
-						<td>{message}</td>
+						<td>{nl2br(message)}</td>
 					</tr>
 				</tbody>
 			</table>
